@@ -1,0 +1,45 @@
+body {
+  font-family: Arial;
+  background: linear-gradient(to right, #013116, #007535);
+  padding: 20px;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.container h1{
+    text-align: center;
+    color: black;
+}
+
+input, button {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  cursor: pointer;
+  background: #4CAF50;
+  color: white;
+  border: none;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+.card {
+  background: #f9f9f9;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border-left: 5px solid #4CAF50;
+}

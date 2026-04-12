@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Record System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Student Record System</h1>
+
+  <!-- ADD -->
+  <h3>Add Student</h3>
+  <input id="name" placeholder="Name">
+  <input id="course" placeholder="Course">
+  <input id="year" placeholder="Year">
+  <button onclick="addStudent()">Add</button>
+
+  <hr>
+
+  <!-- SEARCH ONLY -->
+  <input id="searchInput" placeholder="Search name...">
+  <button onclick="searchStudent()">Search</button>
+
+  <hr>
+
+  <button onclick="loadStudents()">Load Students</button>
+
+  <div id="list"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
