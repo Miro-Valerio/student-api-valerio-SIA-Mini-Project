@@ -8,27 +8,16 @@ app.use(cors());
 app.use(express.json());
 
 
-// =====================
+
 // DATASET
-// =====================
-let students = [
-  { id: 1, name: "Monkey D. Luffy", course: "BSIT", year: 2 },
-  { id: 2, name: "Roronoa Zoro", course: "BSBA", year: 1 },
-  { id: 3, name: "Vinsmoke Sanji", course: "BSCS", year: 3 },
-  { id: 4, name: "Uzumaki Naruto", course: "BSIT", year: 4 },
-  { id: 5, name: "Uchiha Sasuke", course: "BSCS", year: 2 }
-];
+let students = [];
 
-// =====================
-// BASIC ENDPOINTS
-// =====================
-
-// GET all students
+// GET all students - once na gusto nimo sya makita sa local host u just add /students sa url
 app.get("/students", (req, res) => {
   res.status(200).json(students);
 });
 
-// GET student by ID
+// GET student by ID once na gusto nimo sya pangitaon sa local host u just add /students/1 or 2 or 3 depende sa id sa student nga gusto nimo makita
 app.get("/students/:id", (req, res) => {
   const student = students.find(s => s.id == req.params.id);
 
@@ -39,7 +28,7 @@ app.get("/students/:id", (req, res) => {
   res.status(200).json(student);
 });
 
-// ADD student
+// ADD student - once na gusto nimo sya idugang sa local host u just add /students sa url then i input nimo ang name, course, year sa body sa postman
 app.post("/students", (req, res) => {
   const { name, course, year } = req.body;
 
@@ -59,7 +48,7 @@ app.post("/students", (req, res) => {
   res.status(201).json(newStudent);
 });
 
-// UPDATE student
+// UPDATE student - once na gusto nimo sya iupdate sa local host u just add /students/1 or 2 or 3 depende sa id sa student nga gusto nimo iupdate then i input nimo ang name, course, year sa body sa postman
 app.put("/students/:id", (req, res) => {
   const student = students.find(s => s.id == req.params.id);
 
@@ -93,9 +82,6 @@ app.delete("/students/:id", (req, res) => {
   res.status(200).json({ message: "Student deleted successfully" });
 });
 
-// =====================
-// FILTER / SEARCH
-// =====================
 
 // Filter by course
 app.get("/students/course/:course", (req, res) => {
@@ -126,9 +112,6 @@ app.get("/search", (req, res) => {
   res.status(200).json(result);
 });
 
-// =====================
-// EXTRA FEATURES
-// =====================
 
 // Count students
 app.get("/count", (req, res) => {
@@ -143,9 +126,8 @@ app.get("/random", (req, res) => {
   res.status(200).json(random);
 });
 
-// =====================
+
 // SERVER
-// =====================
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
