@@ -1,18 +1,20 @@
 {
-  "name": "student-api-valerio",
+  "name": "taskr-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Taskr Task Manager API",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
     "cors": "^2.8.6",
-    "express": "^5.2.1"
-  }
-}
+    "express": "^4.22.2",
+    "install": "^0.13.0",
+    "path": "^0.12.7",
+    "start": "^5.1.0",
+    "@supabase/supabase-js": "^2.45.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }}
